@@ -31,20 +31,21 @@ public class Kadai3 {
 
 	public static boolean validation(String check[]) {
 
-		if(isArgCheck(check)&&isNumCheck(check[0],check[1])&&isSymCheck(check[2])) {
+		if(isArgumentCountCheck(check)&&isParseCheck(check[0],check[1])&&isSymbolCheck(check[2])) {
 			return true;
 		}
 		return false;
+
 	}
 
 
 
-	public static boolean isArgCheck(String checkBound[]) {
-		if(checkBound.length<3){
+	public static boolean isArgumentCountCheck(String checkArgumentNumber[]) {
+		if(checkArgumentNumber.length<3){
 			System.out.println("引数が足りません");
 			return false;
 		}
-		if(checkBound.length>3) {
+		if(checkArgumentNumber.length>3) {
 			System.out.println("引数が多すぎます");
 			//System.out.println(CheckBound[3]);
 			//「*」のみコマンドライン引数に出来ず。上記では「.project」が出現(ワイルドカード扱い？)
@@ -55,12 +56,12 @@ public class Kadai3 {
 	}
 
 
-	public static boolean isNumCheck(String checkNum1,String checkNum2) {
+	public static boolean isParseCheck(String checkParseNum1,String checkParseNum2) {
 		int i=1;
 		try {
-			Double.parseDouble(checkNum1);
+			Double.parseDouble(checkParseNum1);
 			i++;
-			Double.parseDouble(checkNum2);
+			Double.parseDouble(checkParseNum2);
 			return true;
 		}catch(NumberFormatException e){
 			System.out.println(i+"番目の引数は数字で入力してください");
@@ -69,8 +70,8 @@ public class Kadai3 {
 	}
 
 
-	public static boolean isSymCheck(String checkSym) {
-		switch(checkSym) {
+	public static boolean isSymbolCheck(String checkSymbol) {
+		switch(checkSymbol) {
 			case"+":
 			case"-":
 			case"*":
