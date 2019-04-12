@@ -1,6 +1,6 @@
 package console;
 
-public class kadai2 {
+public class Kadai2 {
 
 	public static void main(String[] args) {
 		
