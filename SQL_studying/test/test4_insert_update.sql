@@ -1,4 +1,4 @@
-\encoding sjis;
+\encoding UTF-8;
 
 /*p.144
 4.1 結果：commitされていないため、何も表示されない

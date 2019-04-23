@@ -1,4 +1,4 @@
-\encoding sjis;
+\encoding UTF-8;
 
 --p.31
 --1.1 create table

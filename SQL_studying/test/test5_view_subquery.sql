@@ -1,4 +1,4 @@
-\encoding sjis;
+\encoding UTF-8;
 
 /*p.176
 5.1 条件を満たすビューを作成

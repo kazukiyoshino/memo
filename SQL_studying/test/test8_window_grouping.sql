@@ -1,4 +1,4 @@
-\encoding sjis;
+\encoding UTF-8;
 /*p.291
 8.1 select文の実行、結果の確認*/
 
