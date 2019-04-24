@@ -45,14 +45,20 @@ public class StudentsList {
 	public static Connection createConnection() {
 		String url = "jdbc:postgresql://localhost:5432/training_dbconnection";
         String user = "postgres";
-        String password = "Ky22364467";
+        String password = "postgres";
+//      Scanner scanner = new Scanner(System.in);
         try {
-        return DriverManager.getConnection(url,user,password);
+//        	System.out.println("SQL user:"+user+" のパスワードを入力してください");
+//            password = scanner.next();
+            return DriverManager.getConnection(url,user,password);
         }
         catch(SQLException e) {
         	e.printStackTrace();
         	return null;
         }
+//        finally {
+//        	scanner.close();
+//        }
 	}
 
 

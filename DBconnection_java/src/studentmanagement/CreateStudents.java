@@ -54,10 +54,9 @@ public class CreateStudents {
         //接続情報
         String url = "jdbc:postgresql://localhost:5432/training_dbconnection";
         String user = "postgres";
-        String password = "Ky22364467";
+        String password = "postgres";
 
     	try {
-
 
 	        connection = DriverManager.getConnection(url, user, password);
 

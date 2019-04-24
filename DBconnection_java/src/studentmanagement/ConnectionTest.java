@@ -15,7 +15,7 @@ public class ConnectionTest {
         //接続文字列
         String url = "jdbc:postgresql://localhost:5432/training_dbconnection";
         String user = "postgres";
-        String password = "Ky22364467";
+        String password = "postgres";
 
         try{
             //PostgreSQLへ接続
