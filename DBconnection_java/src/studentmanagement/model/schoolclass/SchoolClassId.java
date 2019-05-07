@@ -1,8 +1,11 @@
 package studentmanagement.model.schoolclass;
 
 public class SchoolClassId {
+
 private Integer id ;
 
+public SchoolClassId() {
+}
 public SchoolClassId(Integer id) {
 	this.id = id ;
 }
@@ -13,6 +16,12 @@ public Integer getId() {
 
 public void setId(Integer id) {
 	this.id = id;
+}
+
+public boolean isEmpty() {
+	if(id == null)
+		return true;
+	return false;
 }
 
 @Override

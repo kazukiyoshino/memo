@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 
 public class ConnectionTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) {//java→DB接続の基本、三層構造(データアクセス)を忘れずに
         Connection connect = null;
         Statement statement = null;
         ResultSet resultSet = null;
