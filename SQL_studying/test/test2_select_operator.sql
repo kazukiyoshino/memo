@@ -1,4 +1,4 @@
-\encoding sjis;
+\encoding UTF-8;
 
 /* p.68
 このファイルのエンコード==utf-8・DB==Sjis

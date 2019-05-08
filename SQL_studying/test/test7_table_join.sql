@@ -1,4 +1,4 @@
-\encoding sjis;
+\encoding UTF-8;
 
 /*p.261
 7.1 select文の実行・確認:shohinがそのまま(shohinをshohinと集合させているため)*/

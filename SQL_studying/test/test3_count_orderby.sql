@@ -1,4 +1,4 @@
-\encoding sjis;
+\encoding UTF-8;
 
 
 /*3.1 間違い探し p.109
