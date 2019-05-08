@@ -12,12 +12,12 @@ import studentmanagement.model.student.Student;
 public class GetStudentListService {
 
 	public static ArrayList<Student> getStudentList(SchoolClassName schoolClassName) {
-
-	SchoolClassId schoolClassId = FindClassIdDataAccess.findClassId(schoolClassName).get();
-
-	SchoolClass schoolClass = new SchoolClass(schoolClassId,schoolClassName);
-
-	return  CreateStudentList.createStudentList(schoolClass);
+	
+		SchoolClassId schoolClassId = FindClassIdDataAccess.findClassId(schoolClassName).get();
+	
+		SchoolClass schoolClass = new SchoolClass(schoolClassId,schoolClassName);
+	
+		return  CreateStudentList.createStudentList(schoolClass);
 	}
 
 }

@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class ConnectionTest {
     public static void main(String[] args) {//java→DB接続の基本、三層構造(データアクセス)を忘れずに
-        Connection connect = null;
+        Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
 
@@ -19,13 +19,13 @@ public class ConnectionTest {
 
         try{
             //PostgreSQLへ接続
-            connect = DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(url, user, password);
 
             //自動コミットOFF
-            connect.setAutoCommit(false);
+            connection.setAutoCommit(false);
 
 
-            statement = connect.createStatement();
+            statement = connection.createStatement();
 
             //SELECT文の実行
             String sql = "SELECT* from course";
@@ -45,7 +45,7 @@ public class ConnectionTest {
             try {
                 if(resultSet != null)resultSet.close();
                 if(statement != null)statement.close();
-                if(connect != null)connect.close();
+                if(connection != null)connection.close();
             }
             catch (SQLException e){
                 e.printStackTrace();

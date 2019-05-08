@@ -27,11 +27,12 @@ public class StudentsList {
 		}
 		catch(Exception e) {
 			System.out.println("エラーが発生しました。プログラムを終了します。");
+			throw e;
 		}
 		finally {
 			scanner.close();
-			}
 		}
+	}
 
 
 	public static SchoolClassName requestSchoolClassName() {
@@ -43,8 +44,7 @@ public class StudentsList {
 
 
 	public static void studentDisplay(ArrayList<Student> studentList) {
-		for(int i = 0;i < studentList.size();i++) {
-			Student student = studentList.get(i);
+		for(Student student : studentList) {
 			System.out.print("Id： "+student.getStudentId().getId()+" ");
             System.out.print("クラス： "+student.getSchoolClass().getSchoolClassName().getName()+" ");
             System.out.println("名前： "+student.getStudentName().getName());
