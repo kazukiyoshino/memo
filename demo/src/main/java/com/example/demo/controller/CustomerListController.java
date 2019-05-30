@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,13 +24,11 @@ public class CustomerListController {
 	public String showAllCustomers(Model model) {
 		List<Customer> customers = customerService.findAll();
 		model.addAttribute("customers",customers);
-		System.out.println("showAll起動");
-		return "/list";
+		return "list";
 	}
 
 	@RequestMapping(value = "/",method = GET)
 	public String home() {
-		System.out.println("home起動");
 		return "forward:/customer";
 	}
 
@@ -38,8 +37,11 @@ public class CustomerListController {
 											throws Exception{
 		Customer customer = customerService.findById(customerId);
 		model.addAttribute("customer", customer);
-		return "customer/detail";
+		return "detail";
 
-	}//web.xmlが効いていない？orパスが間違っている？or検索場所がおかしい？
-		//→listが見つからない
+	}
+	@ExceptionHandler(Exception.class)
+	public String handleException() {
+		return "notfound";
+	}
 }

@@ -1,10 +1,13 @@
 package com.example.demo.model;
 
+import javax.validation.constraints.AssertFalse;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.Length;
 
+@XmlRootElement
 public class Customer implements java.io.Serializable {
 
 	private int id;
@@ -14,6 +17,7 @@ public class Customer implements java.io.Serializable {
 	@NotBlank
 	@Length(max = 100)
 	private String address;
+
 	@NotBlank
 	@Email
 	private String emailAddress;
@@ -24,6 +28,7 @@ public class Customer implements java.io.Serializable {
 		this.emailAddress = emailAddress;
 	}
 
+	@AssertFalse(message = "{errors.ngEmail}")
 	public boolean isNgEmail() {
 		//ng.foo.bazは使用不可のアドレスとみなす
 		return emailAddress.matches(".*@ng.foo.baz");

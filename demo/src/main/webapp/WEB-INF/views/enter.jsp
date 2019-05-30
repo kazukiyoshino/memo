@@ -24,7 +24,7 @@
   <dd>
     <form:input path="emailAddress"/>
     <form:errors path="emailAddress"/>
-    <form:errors path="ngEmail"/>
+
   </dd>
 </dl>
 <button type="submit" name="_event_proceed" value="proceed">

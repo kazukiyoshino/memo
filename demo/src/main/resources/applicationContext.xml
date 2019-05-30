@@ -55,12 +55,12 @@ class= "com.example.demo.sample.ProductDaoImpl"/>
 -->
 
 
-<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     <property name="driverClassName" value="${jdbc.driverclassname}" />
     <property name="url" value="${jdbc.url}" />
     <property name="username" value="${jdbc.username}" />
     <property name="password" value="${jdbc.password}" />
-</bean>
+</bean>-->
 <context:property-placeholder location="jdbc.properties"/>
 
 <bean id = "transactionManager"
