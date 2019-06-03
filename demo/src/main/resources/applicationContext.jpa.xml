@@ -14,47 +14,38 @@ http://www.springframework.org/schema/tx/spring-tx.xsd
 http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-   <bean id="dataSource"
+    <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver" />
         <property name="url" value="jdbc:postgresql://localhost:5432/springdb" />
         <property name="username" value="postgres" />
         <property name="password" value="postgres" />
     </bean>
-    <bean id="sessionFactory"
-        class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+    <bean id="entityManagerFactory"
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="mappingResources">
-            <list>
-                <value>Person.hbm.xml</value>
-            </list>
-        </property>
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-            </props>
-        </property>
+
+        <property name="persistenceProviderClass" value="org.hibernate.jpa.HibernatePersistenceProvider"/>
+        <!-- org.hibernate.ejb.HibernatePersistenceがない？プロバイダクラスとは？ -->
+        <!-- 解決：org.hibernate.ejb.HibernatePersistenceは非推奨&削除済み -->
+        <property name="packagesToScan" value="com.example.jpa"/>
     </bean>
-    <bean class="org.springframework.orm.hibernate5.HibernateTemplate">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-    <bean id="transactionManager2"
-        class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-<aop:config>
+    <aop:config>
         <aop:advisor advice-ref="txAdvice"
-            pointcut="execution(* *..*Service*.*(..))" />
+            pointcut="execution(* *..*Dao*.*(..))" />
     </aop:config>
-    <tx:advice id="txAdvice" transaction-manager="transactionManager2">
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="find*" read-only="true" />
-            <tx:method name="add*" propagation="REQUIRED"/>
+            <tx:method name="insert*" propagation="REQUIRED"/>
             <tx:method name="remove*" propagation="REQUIRED"/>
-            <tx:method name="update*" read-only="false" propagation="REQUIRED"/>
-
         </tx:attributes>
     </tx:advice>
-    <context:component-scan base-package="/com.example.hibernate"/>
+    <!--<jee:jndi-lookup id="entityManagerFactory" jndi-name="persistence/manager1"/>-->
+    <context:component-scan base-package="com.example.jpa"/>
+    <context:annotation-config/>
 </beans>

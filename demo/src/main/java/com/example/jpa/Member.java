@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.jpa;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +11,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="member")
+@Table(name="t_member")
 public class Member {
 
     @Id

@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.hibernate.model;
 
 public class Person {
     private String id;

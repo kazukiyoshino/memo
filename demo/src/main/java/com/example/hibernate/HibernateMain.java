@@ -1,12 +1,12 @@
-package com.example.demo;
+package com.example.hibernate;
 
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.example.demo.model.Person;
-import com.example.demo.service.PersonService;
+import com.example.hibernate.model.Person;
+import com.example.hibernate.service.PersonService;
 
 public class HibernateMain {
 

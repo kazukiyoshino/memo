@@ -1,9 +1,9 @@
-package com.example.demo.dataaccess;
+package com.example.hibernate.dataaccess;
 
 
 import java.util.List;
 
-import com.example.demo.model.Person;
+import com.example.hibernate.model.Person;
 
 public interface PersonDao {
     List<Person> findPerson();

@@ -1,4 +1,4 @@
-package com.example.demo.dataaccess;
+package com.example.hibernate.dataaccess;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.Person;
+import com.example.hibernate.model.Person;
 
 @Repository
 //@ImportResource("classpath:applicationContext.hibernate.xml")

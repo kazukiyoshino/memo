@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistance xmlns="http://java.sun.com/xml/ns/persistance"
+			 xmlns:xsi="http://www.w3.org/2001/XMLScheme-instance"
+			 xsi:schemaLocation="http://java.sun.com/xml/ns/persistance
+			 http://java.sun.com/xml/ns/persistance/persistance.xsd"
+			 version="2.0">
+	<persistance-unit name="manager1">
+		<provider>org.hibernate.ejb.HibernatePersistance</provider>
+		<properties>
+			<property name="hibernate.diarect" value="org.hibernate.diarect.postgreSQLDialect"/>
+			<property name="javax.persistance.jdbc.driver" value="org.postgresql.Driver"/>
+			<property name="javax.persistance.jdbc.url" value="jdbc:postgresql://localhost:5432/springdb"/>
+			<property name="javax.persistance.jdbc.user" value="postgres"/>
+			<property name="javax.persistance.jdbc.password" value="postgres"/>
+		</properties>
+	</persistance-unit>
+</persistance>
+<!-- JSP用。但し必要ない方法あり：今回は必要なしの方法で -->

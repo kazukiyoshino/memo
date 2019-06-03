@@ -1,8 +1,8 @@
-package com.example.demo.service;
+package com.example.hibernate.service;
 
 import java.util.List;
 
-import com.example.demo.model.Person;
+import com.example.hibernate.model.Person;
 
 //@ImportResource("classpath:applicationContext.hibernate.xml")
 public interface PersonService {

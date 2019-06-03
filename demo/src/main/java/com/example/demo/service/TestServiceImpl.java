@@ -16,6 +16,7 @@ public class TestServiceImpl implements TestService{
 
 	public void testmethod() {
 		int  count = accountDao.getZandaka(account.getAccountNumber());
+		System.out.println(count);
 
 	}
 

@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.jpa;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="group")
+@Table(name="t_group")
 public class Group {
 
     @Id

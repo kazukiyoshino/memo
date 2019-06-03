@@ -1,12 +1,12 @@
-package com.example.demo.service;
+package com.example.hibernate.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dataaccess.PersonDao;
-import com.example.demo.model.Person;
+import com.example.hibernate.dataaccess.PersonDao;
+import com.example.hibernate.model.Person;
 
 @Service
 public class PersonServiceImpl implements PersonService {

@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.example.demo.model.Person" table="person" mutable="false">
+    <class name="com.example.hibernate.model.Person" table="person" mutable="false">
         <id name="id" column="id" type="java.lang.String">
             <generator class="assigned" />
         </id>
