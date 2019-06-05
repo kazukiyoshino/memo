@@ -12,7 +12,7 @@ import com.example.demo.sample.ProductService;
 
 @SpringBootApplication
 @Configuration
-@ImportResource("classpath:applicationContext.xml")
+@ImportResource({"classpath:applicationContext.xml","classpath:/META-INF/spring/beans-biz.xml"})
 public class DemoApplication {
 
 	//ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
