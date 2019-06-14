@@ -24,6 +24,8 @@
   <dd>
     <form:input path="emailAddress"/>
     <form:errors path="emailAddress"/>
+    <form:errors path="ngEmail"/>
+    <form:errors path="freeEmail"/>
 
   </dd>
 </dl>

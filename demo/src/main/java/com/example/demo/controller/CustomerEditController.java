@@ -2,12 +2,11 @@ package com.example.demo.controller;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.HttpSessionRequiredException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -44,7 +43,7 @@ public class CustomerEditController {
 
     @RequestMapping(value = "/enter", params = "_event_proceed", method = POST)
     public String verify(
-            @Valid @ModelAttribute("editCustomer") Customer customer,
+            @Validated @ModelAttribute("editCustomer") Customer customer,
             Errors errors) {
         if (errors.hasErrors()) {
             return "enter";

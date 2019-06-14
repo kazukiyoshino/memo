@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+
 import javax.validation.constraints.AssertFalse;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -11,7 +12,7 @@ import org.hibernate.validator.constraints.Length;
 public class Customer implements java.io.Serializable {
 
 	private int id;
-	@NotBlank
+	@NotBlank(message = "{errors.freeEmail}")
 	@Length(max = 20)
 	private String name;
 	@NotBlank
@@ -34,6 +35,7 @@ public class Customer implements java.io.Serializable {
 		return emailAddress.matches(".*@ng.foo.baz");
 	}
 
+	@AssertFalse(message = "{errors.freeEmail}" )
 	public boolean isFreeEmail() {
 		//free.foo.bazはフリーメールとみなす
 		return emailAddress.matches(".*@free.foo.baz");
